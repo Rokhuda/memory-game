@@ -1,0 +1,19 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "vanilla.js",
+  "main": "gameSrc.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rokhuda/memory-game.git"
+  },
+  "author": "Tshitimbi Rokhuda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rokhuda/memory-game/issues"
+  },
+  "homepage": "https://github.com/Rokhuda/memory-game#readme"
+}

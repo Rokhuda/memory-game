@@ -1,0 +1,48 @@
+
+const cards is set to document.querySelectorAll(.cards)
+ 
+
+
+
+shuffle cards method
+for each card in the cards array
+random place is set from 1 to 12 blocks
+card is placed at a random block
+
+const cards is set to document.querySelectorAll(.cards)
+
+
+
+the opening card method
+if the board is locked nothing should happen
+this represents the clicked card
+the clicked card is added to the opened class list
+function accesses the element’ s classList and toggles the flip class
+
+
+
+check matching cards
+if the two opened cards are in the same data set
+they must be disabled
+else the must be closed or flipped back
+ 
+
+
+disable cards methods (when the cards have matched)
+remove event listener on card one
+remove event listener on card two
+reset board
+ 
+
+close cards methods
+set lock board to true
+set time for the non matching cards to close to 700
+close card one in the open class list
+close card two in the open class list
+reset board
+
+Resetting the board function
+the opened card and the board are set to false
+and cardOne and cardTwo must be null null
+The method will be called both from disableCards and closeCards functions
+ 

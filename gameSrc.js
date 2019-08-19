@@ -5,7 +5,7 @@ let openedCard = false;
 let lockBoard = false; //second set of cards must not be opened unless the other have flipped back or are disabled
 let cardOne, cardTwo;
 
-//When the game starts or restarts, all cards should be shuffled and in position
+//shuffles cards and display each card in the deck on game lockBoard
 (function shuffle() {
     cards.forEach(card => {
         let randomPlace = Math.floor(Math.random() * 12);
@@ -13,10 +13,7 @@ let cardOne, cardTwo;
     });
 })();
 
-
-
-
-//shuffles cards and display each card in the deck on game lockBoard
+//When the game starts or restarts, all cards should be shuffled and in position
 function startGame() {
     var shuffledCards = shuffle(cards);
     for (var i = 0; i < shuffledCards.length; i++) {
@@ -29,7 +26,7 @@ function startGame() {
 // when the card is clicked on it must open unless its opened already
 cards.forEach(card => card.addEventListener('click', openCard));
 
-//Allows two cards to be clicked at a time 
+//Allows two cards to be clicked at a time and checks if they match
 function openCard() {
 
     if (lockBoard) return;

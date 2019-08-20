@@ -1,29 +1,34 @@
-//memory game
+ //memory game
 // The card array
 const cards = document.querySelectorAll('.card');
+// module.exports = cards;
 let openedCard = false;
 let lockBoard = false; //second set of cards must not be opened unless the other have flipped back or are disabled
 let cardOne, cardTwo;
 
 //shuffles cards and display each card in the deck on game lockBoard
-(function shuffle() {
+function shuffle() {
     cards.forEach(card => {
         let randomPlace = Math.floor(Math.random() * 12);
         card.style.order = randomPlace;
     });
-})();
+    
+ 
+
+    
+};
+
+
 
 //When the game starts or restarts, all cards should be shuffled and in position
-function startGame() {
-    var shuffledCards = shuffle(cards);
-    for (var i = 0; i < shuffledCards.length; i++) {
-        [].forEach.call(shuffledCards, function (item) {
-            cards.appendChild(item);
-        });
-    }
-}
+
+
+(function startGame() {
+    shuffle();
+})();
 
 // when the card is clicked on it must open unless its opened already
+
 cards.forEach(card => card.addEventListener('click', openCard));
 
 //Allows two cards to be clicked at a time and checks if they match
@@ -48,6 +53,7 @@ function openCard() {
 };
 
 
+
 //The function checks if the two flipped cards match
 //If the cards match, the cards remain open, else they flip back and close
 function checkMatch() {
@@ -59,6 +65,7 @@ function checkMatch() {
 };
 
 
+
 //This function prevents opened cards to be clickable
 function disableCards() {
     cardOne.removeEventListener('click', openCard);
@@ -66,6 +73,7 @@ function disableCards() {
 
     resetBoard();
 };
+
 
 // The set timeout for the unmatched cards to flip back and close is 700
 function closeCards() {
@@ -84,5 +92,16 @@ function closeCards() {
 function resetBoard() {
     [openedCard, lockBoard] = [false, false];
     [cardOne, cardTwo] = [null, null];
+    let boardObj = {
+        openedCard, lockBoard, cardOne, cardTwo
+    };
+    return boardObj;
 };
 
+module.exports = shuffle;
+module.exports = openCard;
+module.exports = checkMatch;
+module.exports= disableCards;
+module.exports = closeCards;
+module.exports = setTimeout;
+module.exports = resetBoard;
